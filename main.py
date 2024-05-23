@@ -1,6 +1,6 @@
-from calc import repl_executor, script_executor
+from .calc import repl_executor, script_executor
 from sys import argv
-from utils import print_help_msg, print_version
+from .utils import print_help_msg, print_version
 
 
 def arg_parse():

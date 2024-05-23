@@ -1,9 +1,9 @@
-from lexer import Lexer
-from parser import Parser
-from interpreter import Interpreter
+from .lexer import Lexer
+from .parser import Parser
+from .interpreter import Interpreter
 from os import path
-from utils import print_help_msg
-from customerr import CalcException
+from .utils import print_help_msg
+from .customerr import CalcException
 
 
 def read_code(scriptname):
