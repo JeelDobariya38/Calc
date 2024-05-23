@@ -3,7 +3,7 @@ VERSION = "0.1.0"
 
 def print_avaliable_commands():
     print("Available commands: ")
-    print(" - quit, \n - exit, \n - help")
+    print(" - quit \n - exit \n - help")
 
 def print_version():
     print(f"{APPNAME} v{VERSION}")
