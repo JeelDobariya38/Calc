@@ -1,29 +1,30 @@
-from calc import calc_execute
-from utils import print_help_msg
-from customerr import CalcException
+from calc import repl_executor, script_executor
 from sys import argv
+from utils import print_help_msg, print_version
+
+
+def arg_parse():
+    if len(argv) >= 1:
+        return argv[1:]
+    return False
 
 
 def main():
-    isquitted = False
-
-    print("Welcome to Calc REPL!!!!!")
-    print("Type 'help' for help")
-    print()
-
-    while not isquitted:
-        try:
-            code = input(">> ").strip()
-            if code == "quit" or code == "exit":
-                isquitted = True
-                print()
-            elif code[:4] == "help":
-                context = code[5:]
-                print_help_msg(context.strip())
+    args = arg_parse()
+    if args:
+        if args[0].startswith("--"):
+            if args[0] == "--version":
+                print_version()
+                return 0
+            elif args[0] == "--help":
+                print_help_msg()
+                return 0
             else:
-                print(calc_execute(code))
-        except CalcException as e:
-            print(e)
+                raise ValueError(f"Invalid argument \"{args[0]}\"")
+        else:
+            return script_executor(args[0])
+    else:
+        return repl_executor()
 
 
 if __name__ == "__main__":
