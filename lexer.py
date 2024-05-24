@@ -29,7 +29,7 @@ class Lexer:
                     self.isnum = False
                 continue
 
-            if letter in "0123456789.":
+            if letter in "0123456789.-":
                 if self.currtoken == "":
                    self.isnum = True
             else:

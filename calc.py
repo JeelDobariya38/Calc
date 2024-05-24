@@ -14,8 +14,11 @@ def read_code(scriptname):
 def calc_execute(code):
     lexer = Lexer(code)
     tokens = lexer.tokonize()
+    print("tokens:", tokens)
+    print()
     parser = Parser(tokens)
     parsetree = parser.parse()
+    print("Tree:", parsetree)
     interpreter = Interpreter(parsetree)
     return interpreter.interpret()
 

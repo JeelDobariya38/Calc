@@ -1,8 +1,14 @@
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import List
 
+class AbstractNode(ABC):
+    @abstractmethod
+    def execute(self):
+       pass
+
 @dataclass
-class Node:
+class Node(AbstractNode):
     args: List = field(default_factory=list)
 
     def execute(self):
@@ -12,8 +18,13 @@ class Node:
        return last_res
 
 @dataclass
-class NumberNode:
-    data: float
+class NumberNode(Node):
+    data: float =  None
 
     def execute(self):
         return self.data
+
+@dataclass
+class AddNode(Node):
+    def execute(self):
+        return self.args[0].execute() + self.args[1].execute()
