@@ -5,40 +5,49 @@ class Lexer:
         self.code = iter(code)
         self.tokens = []
         self.isnum = False
+        self.currtoken = ""
 
     def iswhitespace(self, letter):
         if letter in "\t \n":
             return True
         return False
 
-    def tokonize(self):
-        currtoken = ""
+    def gettoken(self):
+        if self.currtoken == "+":
+            return Token(TokenType.PLUS, None)
 
+    def tokonize(self):
         for letter in self.code:
             if self.iswhitespace(letter):
-                if currtoken != "" and self.isnum:
+                if self.currtoken != "" and self.isnum:
                     token = Token(
                         TokenType.NUMBER,
-                        currtoken
+                        self.currtoken
                     )
                     self.tokens.append(token)
-                    currtoken = ""
+                    self.currtoken = ""
                     self.isnum = False
                 continue
 
             if letter in "0123456789.":
-                if currtoken == "":
+                if self.currtoken == "":
                    self.isnum = True
             else:
                 if self.isnum:
                     self.isnum = False
 
-            currtoken += letter
+            self.currtoken += letter
 
-        if currtoken != "" and self.isnum:
+            token = self.gettoken()
+            if token:
+                self.tokens.append(token)
+                self.currtoken = ""
+                continue
+
+        if self.currtoken != "" and self.isnum:
             token = Token(
                 TokenType.NUMBER,
-                currtoken
+                self.currtoken
             )
             self.tokens.append(token)
 
