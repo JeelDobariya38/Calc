@@ -24,11 +24,16 @@ class Lexer:
                     self.tokens.append(token)
                     currtoken = ""
                     self.isnum = False
-
-            currtoken += letter
+                continue
 
             if letter in "0123456789.":
-                self.isnum = True
+                if currtoken == "":
+                   self.isnum = True
+            else:
+                if self.isnum:
+                    self.isnum = False
+
+            currtoken += letter
 
         if currtoken != "" and self.isnum:
             token = Token(
