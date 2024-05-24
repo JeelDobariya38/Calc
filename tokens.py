@@ -5,6 +5,7 @@ from dataclasses import dataclass
 class TokenType(Enum):
     NUMBER = "NUM"
     PLUS = "Plus"
+    OUTPUT = "Out"
 
 @dataclass
 class Token:

@@ -16,6 +16,9 @@ class Lexer:
         if self.currtoken == "+":
             return Token(TokenType.PLUS, None)
 
+        if self.currtoken.lower() == "out":
+            return Token(TokenType.OUTPUT, None)
+
     def tokonize(self):
         for letter in self.code:
             if self.iswhitespace(letter):

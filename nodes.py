@@ -28,3 +28,10 @@ class NumberNode(Node):
 class AddNode(Node):
     def execute(self):
         return self.args[0].execute() + self.args[1].execute()
+
+@dataclass
+class OutNode(Node):
+    def execute(self):
+        res = self.args[0].execute()
+        print(res)
+        return 0

@@ -12,17 +12,15 @@ def isnumbernode(node):
 class Parser:
     def __init__(self, tokens):
         self.tokens = iter(tokens)
-        self.parsetree = Node()
 
-    def get_binary_args(self):
+    def get_binary_args(self, parsetree):
         left = None
         right = None
 
-        # Left arg
         try:
-            left = self.parsetree.args[-1]
+            left = parsetree.args[-1]
             right = next(self.tokens)
-        except:
+        except StopIteration as _:
             raise InvalidSyntaxError(f"Invalid Syntax!!!")
 
         if not isnumbernode(left) or right.type != TokenType.NUMBER:
@@ -32,12 +30,17 @@ class Parser:
         return [left, right]
 
     def parse(self):
+        parsetree = Node()
         for token in self.tokens:
             if token.type == TokenType.NUMBER:
                 node = NumberNode(data=float(token.data))
-                self.parsetree.args.append(node)
-            if token.type == TokenType.PLUS:
-                args = self.get_binary_args()
+                parsetree.args.append(node)
+            elif token.type == TokenType.PLUS:
+                args = self.get_binary_args(parsetree)
                 node = AddNode(args)
-                self.parsetree.args[-1] = node
-        return self.parsetree
+                parsetree.args[-1] = node
+            elif token.type == TokenType.OUTPUT:
+                outparsetree = self.parse()
+                node = OutNode(outparsetree.args)
+                parsetree.args.append(node)
+        return parsetree
