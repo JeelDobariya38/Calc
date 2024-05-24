@@ -3,7 +3,7 @@ from typing import Any
 from dataclasses import dataclass
 
 class TokenType(Enum):
-    NUMBER = "NUM"
+    NUMBER = "Num"
     PLUS = "Plus"
     OUTPUT = "Out"
 
