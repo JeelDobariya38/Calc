@@ -3,4 +3,4 @@ class Interpreter:
         self.parsetree = parsetree
 
     def interpret(self):
-        return 0
+        return self.parsetree.execute()
