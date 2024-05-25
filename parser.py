@@ -2,12 +2,14 @@ from nodes import *
 from tokens import TokenType
 from customerr import *
 
+
 def isnumbernode(node):
     res = str(node.execute())
     for char in res:
         if not char in "1234567890.-":
             return False
     return True
+
 
 class Parser:
     def __init__(self, tokens):
@@ -17,16 +19,36 @@ class Parser:
         left = None
         right = None
 
+        # Left Arg
         try:
-            left = parsetree.args[-1]
+            left = parsetree.args.pop()
+            if not isnumbernode(left):
+                raise InvalidSyntaxError("Invalid Left Args Type!!!")
+        except IndexError as _:
+            left = NumberNode(data=float(0))
+
+        # Right Arg
+        try:
             right = next(self.tokens)
         except StopIteration as _:
-            raise InvalidSyntaxError(f"Invalid Syntax!!!")
+            raise InvalidSyntaxError(f"Not Sufficient Args!!!")
 
-        if not isnumbernode(left) or right.type != TokenType.NUMBER:
-            raise InvalidSyntaxError(f"Adding something of type \"{left.type}\" to \"{right.type}\" is invalid!!!")
+        if right.type != TokenType.NUMBER:
+            if right.type == TokenType.MINUS:
+                try:
+                    right = next(self.tokens)
+                    if right.type == TokenType.NUMBER:
+                        neg_num = 0 - float(right.data)
+                        right = NumberNode(data=neg_num)
+                    else:
+                        raise InvalidSyntaxError(f"Not Sufficient Args!!!")
+                except StopIteration as _:
+                    raise InvalidSyntaxError(f"Not Sufficient Args!!!")
+            else:
+                raise InvalidSyntaxError(f"Invalid Right Args Type!!!")
+        else:
+            right = NumberNode(data=float(right.data))
 
-        right = NumberNode(data=float(right.data))
         return [left, right]
 
     def parse(self):
@@ -38,7 +60,11 @@ class Parser:
             elif token.type == TokenType.PLUS:
                 args = self.get_binary_args(parsetree)
                 node = AddNode(args)
-                parsetree.args[-1] = node
+                parsetree.args.append(node)
+            elif token.type == TokenType.MINUS:
+                args = self.get_binary_args(parsetree)
+                node = SubNode(args)
+                parsetree.args.append(node)
             elif token.type == TokenType.OUTPUT:
                 outparsetree = self.parse()
                 node = OutNode(outparsetree.args)
