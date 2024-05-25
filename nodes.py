@@ -41,6 +41,18 @@ class SubNode(Node):
 
 
 @dataclass
+class MulNode(Node):
+    def execute(self):
+        return self.args[0].execute() * self.args[1].execute()
+
+
+@dataclass
+class DivNode(Node):
+    def execute(self):
+        return self.args[0].execute() / self.args[1].execute()
+
+
+@dataclass
 class OutNode(Node):
     def execute(self):
         res = self.args[0].execute()

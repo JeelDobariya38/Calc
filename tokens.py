@@ -7,7 +7,11 @@ class TokenType(Enum):
     NUMBER = "Num"
     PLUS = "Plus"
     MINUS = "Minus"
+    MULTIPLE = "Multiple"
+    DIVIDE = "Divide"
     OUTPUT = "Out"
+    LPRAM = "LPram"
+    RPRAM = "RPram"
 
 
 @dataclass
