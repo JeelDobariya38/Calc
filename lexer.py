@@ -1,5 +1,6 @@
 from tokens import Token, TokenType
 
+
 class Lexer:
     def __init__(self, code):
         self.code = iter(code)
@@ -34,7 +35,7 @@ class Lexer:
 
             if letter in "0123456789.-":
                 if self.currtoken == "":
-                   self.isnum = True
+                    self.isnum = True
             else:
                 if self.isnum:
                     self.isnum = False

@@ -24,7 +24,8 @@ def calc_execute(code):
     return interpreter.interpret()
 
 
-def script_executor(scriptname): # TODO: add feature of read and executing script
+# TODO: add feature of read and executing script
+def script_executor(scriptname):
     if path.exists(scriptname):
         codelines = read_code(scriptname)
         for codeline in codelines:
