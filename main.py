@@ -4,14 +4,14 @@ import os
 from utils import print_help_msg, print_version
 from colorama import Fore, Style
 
+
 def warning():
-    print(Fore.RED)
-    print("Calc is under it development version..")
+    print(Fore.RED + "Calc is under it development version..")
     print("therefore, it can have bug and error..")
     print("if you encounter any, please kindly report them,")
     print("and have valuable place in calc development")
-    print(Style.RESET_ALL)
-
+    print(Style.RESET_ALL+ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    print()
 
 def arg_parse():
     if len(sys.argv) >= 1:
