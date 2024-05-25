@@ -44,12 +44,15 @@ class Parser:
                         raise InvalidSyntaxError(f"Not Sufficient Args!!!")
                 except StopIteration as _:
                     raise InvalidSyntaxError(f"Not Sufficient Args!!!")
+            elif right.type == TokenType.LPRAM:
+                right = self.parse().args[0]
             else:
                 raise InvalidSyntaxError(f"Invalid Right Args Type!!!")
         else:
             right = NumberNode(data=float(right.data))
 
         return [left, right]
+
 
     def parse(self):
         parsetree = Node()
@@ -77,4 +80,9 @@ class Parser:
                 outparsetree = self.parse()
                 node = OutNode(outparsetree.args)
                 parsetree.args.append(node)
+            elif token.type == TokenType.LPRAM:
+                tree = self.parse().args[0]
+                parsetree.args.append(tree)
+            elif token.type == TokenType.RPRAM:
+                return parsetree
         return parsetree

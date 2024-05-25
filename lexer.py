@@ -57,6 +57,30 @@ class Lexer:
                 self.currtoken = ""
                 continue
 
+            if letter == "(":
+                token = Token(TokenType.LPRAM)
+                self.tokens.append(token)
+                self.currtoken = self.currtoken[:-1]
+                continue
+
+            if letter == ")":
+                token = Token(TokenType.RPRAM)
+                self.currtoken = self.currtoken[:-1]
+                self.isnum = True
+                for char in self.currtoken:
+                    if char not in "0123456789.":
+                        self.isnum = False
+                        break
+                numtoken = Token(
+                        TokenType.NUMBER,
+                        self.currtoken
+                    )
+                self.tokens.append(numtoken)
+                self.currtoken = ""
+                self.isnum = False
+                self.tokens.append(token)
+                continue
+
         if self.currtoken != "":
             if self.isnum:
                 token = Token(
