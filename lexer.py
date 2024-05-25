@@ -20,6 +20,12 @@ class Lexer:
         if self.currtoken == "-":
             return Token(TokenType.MINUS)
 
+        if self.currtoken in "*xX":
+            return Token(TokenType.MULTIPLE)
+
+        if self.currtoken == "/":
+            return Token(TokenType.DIVIDE)
+
         if self.currtoken.lower() == "out":
             return Token(TokenType.OUTPUT)
 

@@ -65,6 +65,14 @@ class Parser:
                 args = self.get_binary_args(parsetree)
                 node = SubNode(args)
                 parsetree.args.append(node)
+            elif token.type == TokenType.MULTIPLE:
+                args = self.get_binary_args(parsetree)
+                node = MulNode(args)
+                parsetree.args.append(node)
+            elif token.type == TokenType.DIVIDE:
+                args = self.get_binary_args(parsetree)
+                node = DivNode(args)
+                parsetree.args.append(node) 
             elif token.type == TokenType.OUTPUT:
                 outparsetree = self.parse()
                 node = OutNode(outparsetree.args)
