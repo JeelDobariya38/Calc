@@ -39,6 +39,6 @@ def main():
 
 if __name__ == "__main__":
     env = os.environ['Environment']
-    if env == "dev":
+    if env == "Dev":
         warning()
     main()
