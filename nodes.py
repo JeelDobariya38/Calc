@@ -35,6 +35,12 @@ class AddNode(Node):
 
 
 @dataclass
+class SubNode(Node):
+    def execute(self):
+        return self.args[0].execute() - self.args[1].execute()
+
+
+@dataclass
 class OutNode(Node):
     def execute(self):
         res = self.args[0].execute()
