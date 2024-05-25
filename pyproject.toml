@@ -6,6 +6,7 @@ authors = ["Jeel Dobariya <dobariyaj34@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.12"
+colorama = "^0.4.6"
 
 [tool.poetry.group.lint.dependencies]
 flake8 = "^7.0.0"

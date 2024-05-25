@@ -1,10 +1,21 @@
 from calc import repl_executor, script_executor
-from sys import argv
+import sys
+import os
 from utils import print_help_msg, print_version
+from colorama import Fore, Style
+
+def warning():
+    print(Fore.RED)
+    print("Calc is under it development version..")
+    print("therefore, it can have bug and error..")
+    print("if you encounter any, please kindly report them,")
+    print("and have valuable place in calc development")
+    print(Style.RESET_ALL)
+
 
 def arg_parse():
-    if len(argv) >= 1:
-        return argv[1:]
+    if len(sys.argv) >= 1:
+        return sys.argv[1:]
     return False
 
 
@@ -27,4 +38,7 @@ def main():
 
 
 if __name__ == "__main__":
+    env = os.environ['Environment']
+    if env == "dev":
+        warning()
     main()
