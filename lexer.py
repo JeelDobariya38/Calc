@@ -77,7 +77,8 @@ class Lexer:
                         TokenType.NUMBER,
                         self.currtoken
                     )
-                self.tokens.append(numtoken)
+                if numtoken.data != "":
+                   self.tokens.append(numtoken)
                 self.currtoken = ""
                 self.isnum = False
                 self.tokens.append(token)
@@ -95,5 +96,5 @@ class Lexer:
                 if token:
                     self.tokens.append(token)
                     self.currtoken = ""
-
+        print(self.tokens)
         return self.tokens
