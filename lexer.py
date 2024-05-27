@@ -96,5 +96,4 @@ class Lexer:
                 if token:
                     self.tokens.append(token)
                     self.currtoken = ""
-        print(self.tokens)
         return self.tokens
