@@ -7,6 +7,8 @@ authors = ["Jeel Dobariya <dobariyaj34@gmail.com>"]
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.12"
 colorama = "^0.4.6"
+fastapi = "^0.111.0"
+uvicorn = "^0.29.0"
 
 [tool.poetry.group.lint.dependencies]
 flake8 = "^7.0.0"
