@@ -1,8 +1,10 @@
 from tokens import Token, TokenType
+from filter import Filter
 
 
 class Lexer:
     def __init__(self, code):
+        code = Filter(code).apply()
         self.code = iter(code)
         self.tokens = []
         self.isnum = False
