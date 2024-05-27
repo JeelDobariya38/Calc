@@ -2,7 +2,7 @@ def apply_dmass(expression):
     return expression
 
 
-def add_space_where_needed(expression):
+def add_whitespaces(expression):
     ind = -1
     final_expression = ""
     num_acc = ""
@@ -26,5 +26,5 @@ class Filter:
     def apply(self):
         expression = self.expression
         expression = apply_dmass(expression)
-        expression = add_space_where_needed(expression)
+        expression = add_whitespaces(expression)
         return expression
