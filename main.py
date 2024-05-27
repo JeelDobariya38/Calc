@@ -1,8 +1,8 @@
-from calc import repl_executor, script_executor
 import sys
 import os
 from utils import print_help_msg, print_version
 from colorama import Fore, Style
+from calc import repl_executor, script_executor
 
 
 def warning():
@@ -12,6 +12,7 @@ def warning():
     print("and have valuable place in calc development")
     print(Style.RESET_ALL+ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print()
+
 
 def arg_parse():
     if len(sys.argv) >= 1:
@@ -38,7 +39,7 @@ def main():
 
 
 if __name__ == "__main__":
-    env = os.environ['Environment']
+    env = os.environ['ENVIRONMENT']
     if env == "Dev":
         warning()
     main()
