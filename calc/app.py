@@ -1,27 +1,12 @@
-from lexer import Lexer
-from parser import Parser
-from interpreter import Interpreter
+from .customerr import CalcException
+from .executor import calc_execute
 from os import path
-from utils import print_help_msg
-from customerr import CalcException
+from .utils import print_help_msg
 
 
 def read_code(scriptname):
     with open(scriptname) as script:
         return script.readlines()
-
-
-def calc_execute(code):
-    lexer = Lexer(code)
-    tokens = lexer.tokonize()
-    # print("tokens:", tokens)
-    # print()
-    parser = Parser(tokens)
-    parsetree = parser.parse()
-    # print("Tree:", parsetree)
-    # print()
-    interpreter = Interpreter(parsetree)
-    return interpreter.interpret()
 
 
 # TODO: add feature of read and executing script

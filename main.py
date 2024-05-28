@@ -1,16 +1,16 @@
-import sys
-import os
-from utils import print_help_msg, print_version
-from colorama import Fore, Style
 from calc import repl_executor, script_executor
+from calc.utils import print_help_msg, print_version
+import colorama
+import os
+import sys
 
 
 def warning():
-    print(Fore.RED + "Calc is under it development version..")
+    print(colorama.Fore.RED + "Calc is under it development version..")
     print("therefore, it can have bug and error..")
     print("if you encounter any, please kindly report them,")
     print("and have valuable place in calc development")
-    print(Style.RESET_ALL+ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    print(colorama.Style.RESET_ALL+ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print()
 
 

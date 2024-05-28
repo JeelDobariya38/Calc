@@ -5,7 +5,7 @@ from typing import List
 
 class AbstractNode(ABC):
     @abstractmethod
-    def execute(self):
+    def execute(self) -> int | None:
         pass
 
 

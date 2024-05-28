@@ -1,5 +1,5 @@
-from tokens import Token, TokenType
-from filter import Filter
+from .filter import Filter
+from .tokens import Token, TokenType
 
 
 class Lexer:
