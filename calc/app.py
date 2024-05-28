@@ -16,7 +16,7 @@ def script_executor(scriptname):
         for codeline in codelines:
             calc_execute(codeline)
     else:
-        raise CalcException(f"Script \"{scriptname}\" not found!!")
+        raise CalcException(f'Script "{scriptname}" not found!!')
 
 
 def repl_executor():

@@ -20,7 +20,7 @@ def run_cli():
                 print_help_msg()
                 return 0
             else:
-                raise ValueError(f"Invalid argument \"{args[0]}\"")
+                raise ValueError(f'Invalid argument "{args[0]}"')
         else:
             return script_executor(args[0])
     else:
