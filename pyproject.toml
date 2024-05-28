@@ -15,6 +15,7 @@ optional = true
 [tool.poetry.group.lint.dependencies]
 flake8 = "^7.0.0"
 black = "^24.4.2"
+pylint = "^3.2.2"
 
 [tool.poetry.scripts]
 calc = 'calc:run_cli'
