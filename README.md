@@ -80,4 +80,4 @@ by creating a issue or pull request.
 
 ## Licence
 
-project is licence under [MIT LICENCE](licence.txt)
+project is licence under [MIT LICENCE](LICENCE.txt)
