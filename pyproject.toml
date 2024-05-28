@@ -3,6 +3,7 @@ name = "calc"
 version = "0.1.0"
 description = "a simple python calculator scripting language"
 authors = ["Jeel Dobariya <dobariyaj34@gmail.com>"]
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.12"
