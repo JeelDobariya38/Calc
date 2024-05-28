@@ -2,82 +2,80 @@
 
 ## Overview
 
-Calc is Math interpreter that can help you with your math homework.
+Calc is a math interpreter designed to help you with your math homework.
 
-## Installtion
+## Installation
 
-you can install calc in three ways:
+You can install Calc in three ways:
 
 1. **Install Locally**
-2. **Install Containerizedly** [Recommended, if want use professionally]
-3. **Install Pythonickly** [Recommended, if want use it as aspring developer]
+2. **Install Containerizedly** [Recommended for professional use]
+3. **Install Pythonically** [Recommended for aspiring developers]
 
 ### Install Locally
 
-Required: Python(3.9) & Git
+**Requirements:** Python (3.9+) & Git
 
-1. Setup Git & GitHub For Cloning A Repository Locally.
+1. Set up Git & GitHub for cloning a repository locally.
 
-2. Clone the Repo Locally By Running.
+2. Clone the repository locally by running:
 
-- it recommand, to run this command in a seperate directory
+   - It's recommended to run this command in a separate directory.
 
-```bash
-git clone https://github.com/JeelDobariya38/Calc.git
-```
+   ```bash
+   git clone https://github.com/JeelDobariya38/Calc.git
+   ```
 
-3. Setup Python 3.9 or above in your machine.
+3. Set up Python 3.9 or above on your machine.
 
-4. Run the Repl Of Calc
+4. Run the REPL of Calc:
 
-```bash
-python main.py
-```
+   ```bash
+   python main.py
+   ```
 
-### Install Containerizedly (Using Docker) [for advance users]
+### Install Containerizedly (Using Docker) [for advanced users]
 
-Required: DockerDesktop
+**Requirements:** Docker Desktop
 
 #### For Development Use (only valid for developers)
 
-1. Setup Git and DockerDesktop For Cloning And Spinning Containers.
+1. Set up Git and Docker Desktop for cloning and spinning containers.
 
-2. Clone The Repository.
+2. Clone the repository.
 
-3. Build the Image.
+3. Build the image.
 
-4. Spin a Container From The New Image Made.
+4. Spin a container from the newly built image.
 
 #### For Production Use (for final production usage)
 
-**Currently Not Supported**
+**Currently not supported**
 
-### Install Pythonicaly (Using pip or any other package manager) [for beginners users]
+### Install Pythonically (Using pip or any other package manager) [for beginner users]
 
-Required: Python(^3.10).Pip & Git
+**Requirements:** Python (^3.10), pip & Git
 
-1. Setup Python and Git.
+1. Set up Python and Git.
 
-2. Install the Package From Git Repository.
-```
-pip install https://github.com/JeelDobariya38/Calc.git
-```
+2. Install the package from the Git repository:
 
-3. Run Cli Tool from terminal
-```
-calc
-```
+   ```bash
+   pip install https://github.com/JeelDobariya38/Calc.git
+   ```
+
+3. Run the CLI tool from the terminal:
+
+   ```bash
+   calc
+   ```
 
 ## Report Bugs
 
-if you encounter any bug or have any kind of questions
-related to calc, then free free to create a issue
-on our GitHub Repository.
+If you encounter any bugs or have any questions related to Calc, feel free to create an issue on our GitHub repository.
 
-if you have any feature request or have feature to merge
-then feel free to be a contributor 
-by creating a issue or pull request.
+If you have any feature requests or want to contribute, feel free to create an issue or pull request.
 
 ## License
 
-project is licence under [MIT LICENSE](LICENSE.txt)
+This project is licensed under the [MIT License](LICENSE.txt).
