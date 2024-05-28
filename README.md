@@ -78,6 +78,6 @@ if you have any feature request or have feature to merge
 then feel free to be a contributor 
 by creating a issue or pull request.
 
-## Licence
+## License
 
-project is licence under [MIT LICENCE](LICENCE.txt)
+project is licence under [MIT LICENSE](LICENSE.txt)
