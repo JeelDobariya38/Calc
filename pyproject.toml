@@ -12,10 +12,17 @@ colorama = "^0.4.6"
 [tool.poetry.group.lint]
 optional = true
 
+[tool.poetry.group.test]
+optional = true
+
 [tool.poetry.group.lint.dependencies]
 flake8 = "^7.0.0"
 black = "^24.4.2"
 pylint = "^3.2.2"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.1"
+coverage = "^7.5.2"
 
 [tool.poetry.scripts]
 calc = 'calc:run_cli'
