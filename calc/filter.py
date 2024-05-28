@@ -15,7 +15,6 @@ def add_whitespaces(expression):
             final_expression += " " + num_acc + " " + val
             num_acc = ""
 
-    print(final_expression + " " + num_acc)
     return final_expression + " " + num_acc
 
 

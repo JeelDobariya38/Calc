@@ -1,6 +1,6 @@
-from nodes import *
-from tokens import TokenType
-from customerr import *
+from .customerr import *
+from .nodes import *
+from .tokens import TokenType
 
 
 def isnumbernode(node):

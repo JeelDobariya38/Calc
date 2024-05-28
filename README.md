@@ -6,10 +6,11 @@ Calc is Math interpreter that can help you with your math homework.
 
 ## Installtion
 
-you can install calc in two ways:
+you can install calc in three ways:
 
-1. **Instal Locally**
-2. **Intall Containerizedly** [Recommended, if want use professionally]
+1. **Install Locally**
+2. **Install Containerizedly** [Recommended, if want use professionally]
+3. **Install Pythonickly** [Recommended, if want use it as aspring developer]
 
 ### Install Locally
 
@@ -51,6 +52,22 @@ Required: DockerDesktop
 
 **Currently Not Supported**
 
+### Install Pythonicaly (Using pip or any other package manager) [for beginners users]
+
+Required: Python(^3.10).Pip & Git
+
+1. Setup Python and Git.
+
+2. Install the Package From Git Repository.
+```
+pip install https://github.com/JeelDobariya38/Calc.git
+```
+
+3. Run Cli Tool from terminal
+```
+calc
+```
+
 ## Report Bugs
 
 if you encounter any bug or have any kind of questions
@@ -61,6 +78,6 @@ if you have any feature request or have feature to merge
 then feel free to be a contributor 
 by creating a issue or pull request.
 
-## Licence
+## License
 
-project is licence under [MIT LICENCE](licence.txt)
+project is licence under [MIT LICENSE](LICENSE.txt)
