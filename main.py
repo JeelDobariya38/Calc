@@ -8,7 +8,7 @@ def warning():
     print("therefore, it can have bug and error..")
     print("if you encounter any, please kindly report them,")
     print("and have valuable place in calc development")
-    print(colorama.Style.RESET_ALL+ "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    print(colorama.Style.RESET_ALL + "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print()
 
 

@@ -1,6 +1,6 @@
+from os import path
 from .customerr import CalcException
 from .executor import calc_execute
-from os import path
 from .utils import print_help_msg
 
 
@@ -9,14 +9,13 @@ def read_code(scriptname):
         return script.readlines()
 
 
-# TODO: add feature of read and executing script
 def script_executor(scriptname):
     if path.exists(scriptname):
         codelines = read_code(scriptname)
         for codeline in codelines:
             calc_execute(codeline)
     else:
-        raise CalcException(f"Script \"{scriptname}\" not found!!")
+        raise CalcException(f'Script "{scriptname}" not found!!')
 
 
 def repl_executor():

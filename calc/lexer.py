@@ -35,10 +35,7 @@ class Lexer:
         for letter in self.code:
             if self.iswhitespace(letter):
                 if self.currtoken != "" and self.isnum:
-                    token = Token(
-                        TokenType.NUMBER,
-                        self.currtoken
-                    )
+                    token = Token(TokenType.NUMBER, self.currtoken)
                     self.tokens.append(token)
                     self.currtoken = ""
                     self.isnum = False
@@ -73,12 +70,9 @@ class Lexer:
                     if char not in "0123456789.":
                         self.isnum = False
                         break
-                numtoken = Token(
-                        TokenType.NUMBER,
-                        self.currtoken
-                    )
+                numtoken = Token(TokenType.NUMBER, self.currtoken)
                 if numtoken.data != "":
-                   self.tokens.append(numtoken)
+                    self.tokens.append(numtoken)
                 self.currtoken = ""
                 self.isnum = False
                 self.tokens.append(token)
@@ -86,10 +80,7 @@ class Lexer:
 
         if self.currtoken != "":
             if self.isnum:
-                token = Token(
-                    TokenType.NUMBER,
-                    self.currtoken
-                )
+                token = Token(TokenType.NUMBER, self.currtoken)
                 self.tokens.append(token)
             else:
                 token = self.gettoken()

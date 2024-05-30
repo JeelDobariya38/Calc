@@ -53,7 +53,6 @@ class Parser:
 
         return [left, right]
 
-
     def parse(self):
         parsetree = Node()
         for token in self.tokens:
@@ -75,7 +74,7 @@ class Parser:
             elif token.type == TokenType.DIVIDE:
                 args = self.get_binary_args(parsetree)
                 node = DivNode(args)
-                parsetree.args.append(node) 
+                parsetree.args.append(node)
             elif token.type == TokenType.OUTPUT:
                 outparsetree = self.parse()
                 node = OutNode(outparsetree.args)
