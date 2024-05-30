@@ -9,6 +9,7 @@ license = "MIT"
 python = ">=3.10.0,<3.13"
 colorama = "^0.4.6"
 fastapi = "^0.111.0"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.lint]
 optional = true
