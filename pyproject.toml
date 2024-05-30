@@ -8,6 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.12"
 colorama = "^0.4.6"
+fastapi = "^0.111.0"
 
 [tool.poetry.group.lint]
 optional = true
