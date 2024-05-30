@@ -12,7 +12,7 @@ app = FastAPI(
     description=metadata.DESCRIPTION,
     version=metadata.VERSION,
     license_info=metadata.LICENSE_INFO,
-    openapi_tags=metadata.METADATA_TAGS
+    openapi_tags=metadata.METADATA_TAGS,
 )
 
 origins = [
@@ -56,11 +56,5 @@ def execute(_command: Command, response: Response):
         res = calc_execute(_command.command)
     except CalcException as e:
         response.status_code = status.HTTP_400_BAD_REQUEST
-        return {
-            "Error": e
-        }
-    return {
-        "command": _command.command,
-        "result": res
-    }
-
+        return {"Error": e}
+    return {"command": _command.command, "result": res}
