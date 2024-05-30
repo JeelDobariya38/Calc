@@ -1,5 +1,13 @@
-from .customerr import *
-from .nodes import *
+from .customerr import InvalidSyntaxError
+from .nodes import (
+    Node,
+    NumberNode,
+    AddNode,
+    SubNode,
+    MulNode,
+    DivNode,
+    OutNode
+)
 from .tokens import TokenType
 
 
