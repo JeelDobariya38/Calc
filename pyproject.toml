@@ -6,7 +6,7 @@ authors = ["Jeel Dobariya <dobariyaj34@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = ">=3.10.0,<3.12"
+python = ">=3.10.0,<3.13"
 colorama = "^0.4.6"
 fastapi = "^0.111.0"
 
