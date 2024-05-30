@@ -1,7 +1,9 @@
 import colorama
 import os
 from calc import run_cli
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def warning():
     print(colorama.Fore.RED + "Calc is under it development version..")
@@ -13,7 +15,7 @@ def warning():
 
 
 if __name__ == "__main__":
-    env = os.environ['ENVIRONMENT']
-    if env == "Dev":
+    env = os.getenv('ENVIRONMENT')
+    if env == "Development":
         warning()
     run_cli()
