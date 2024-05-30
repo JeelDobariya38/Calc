@@ -33,3 +33,5 @@
 LICENSE
 LICENSE.txt
 README.md
+.coverage
+.pytest_cache
