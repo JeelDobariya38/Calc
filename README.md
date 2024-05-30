@@ -70,7 +70,7 @@ You can install Calc in three ways:
 
 5. Spin a container from the newly built image.
    ```bash
-   docker run --name calc_app calc -it
+   docker run -it -p 8000:8000 --name calc_app calc
    ```
 
 #### For Production Use (for final production usage)
