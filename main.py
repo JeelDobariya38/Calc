@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 def warning():
     print(colorama.Fore.RED + "Calc is under it development version..")
     print("therefore, it can have bug and error..")

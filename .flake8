@@ -5,10 +5,10 @@ ignore = E501, W503
 max-line-length = 88
 
 exclude =
-.venv,
-.git,
-**pycache**,
-build,
-dist
+    .venv,
+    .git,
+    __pycache__,
+    build,
+    dist
 
 show-source = True
