@@ -14,10 +14,10 @@ if __name__ == "__main__":
     port = os.getenv("PORT")
 
     if not host:
-        host = "0.0.0.0"
+        host = "127.0.0.1"
 
     if not port:
-        port = 80
+        port = 8080
 
     try:
         uvicorn.run("api.app:app", host=host, port=int(port), log_level="info")
