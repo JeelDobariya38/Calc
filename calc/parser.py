@@ -14,7 +14,7 @@ from .tokens import TokenType
 def isnumbernode(node):
     res = str(node.execute())
     for char in res:
-        if not char in "1234567890.-":
+        if char not in "1234567890.-":
             return False
     return True
 
@@ -32,14 +32,14 @@ class Parser:
             left = parsetree.args.pop()
             if not isnumbernode(left):
                 raise InvalidSyntaxError("Invalid Left Args Type!!!")
-        except IndexError as _:
+        except IndexError as _:  # noqa: F841
             left = NumberNode(data=float(0))
 
         # Right Arg
         try:
             right = next(self.tokens)
-        except StopIteration as _:
-            raise InvalidSyntaxError(f"Not Sufficient Args!!!")
+        except StopIteration as _:  # noqa: F841
+            raise InvalidSyntaxError("Not Sufficient Args!!!")
 
         if right.type != TokenType.NUMBER:
             if right.type == TokenType.MINUS:
@@ -49,13 +49,13 @@ class Parser:
                         neg_num = 0 - float(right.data)
                         right = NumberNode(data=neg_num)
                     else:
-                        raise InvalidSyntaxError(f"Not Sufficient Args!!!")
-                except StopIteration as _:
-                    raise InvalidSyntaxError(f"Not Sufficient Args!!!")
+                        raise InvalidSyntaxError("Not Sufficient Args!!!")
+                except StopIteration as _:    # noqa: F841
+                    raise InvalidSyntaxError("Not Sufficient Args!!!")
             elif right.type == TokenType.LPRAM:
                 right = self.parse().args[0]
             else:
-                raise InvalidSyntaxError(f"Invalid Right Args Type!!!")
+                raise InvalidSyntaxError("Invalid Right Args Type!!!")
         else:
             right = NumberNode(data=float(right.data))
 

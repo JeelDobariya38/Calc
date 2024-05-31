@@ -11,8 +11,8 @@ def test_recognise_of_numbers():
     code = ["5836", "6", "-552", "5.8", "23.75"]
     exp_res = [5836.0, 6.0, -552.0, 5.8, 23.75]
     for i in range(len(code)):
-      res = calc_execute(code[i])
-      assert res == exp_res[i]
+        res = calc_execute(code[i])
+        assert res == exp_res[i]
 
 
 def test_operation_with_neg_num():

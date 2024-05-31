@@ -1,6 +1,15 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
 .center {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-content: center;
+}
+
+.conatiner {
+    display: inline-block;
 }
