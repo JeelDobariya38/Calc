@@ -1,8 +1,6 @@
 class CalcException(Exception):
     def __init__(
-        self,
-        message: str = "Service is currently unavailable!!",
-        name="CalcException"
+        self, message: str = "Service is currently unavailable!!", name="CalcException"
     ):
         self.name = name
         self.message = message

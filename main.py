@@ -16,7 +16,7 @@ def warning():
 
 
 if __name__ == "__main__":
-    env = os.getenv('ENVIRONMENT')
+    env = os.getenv("ENVIRONMENT")
     if env == "Development":
         warning()
     run_cli()

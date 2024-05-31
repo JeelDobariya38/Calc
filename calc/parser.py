@@ -1,13 +1,5 @@
 from .customerr import InvalidSyntaxError
-from .nodes import (
-    Node,
-    NumberNode,
-    AddNode,
-    SubNode,
-    MulNode,
-    DivNode,
-    OutNode
-)
+from .nodes import Node, NumberNode, AddNode, SubNode, MulNode, DivNode, OutNode
 from .tokens import TokenType
 
 
@@ -50,7 +42,7 @@ class Parser:
                         right = NumberNode(data=neg_num)
                     else:
                         raise InvalidSyntaxError("Not Sufficient Args!!!")
-                except StopIteration as _:    # noqa: F841
+                except StopIteration as _:  # noqa: F841
                     raise InvalidSyntaxError("Not Sufficient Args!!!")
             elif right.type == TokenType.LPRAM:
                 right = self.parse().args[0]
