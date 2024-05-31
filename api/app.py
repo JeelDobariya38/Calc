@@ -35,19 +35,19 @@ def root():
     return FileResponse("website/index.html")
 
 
-@app.get("/style", tags=["Frontend"])
+@app.get("/style.css", tags=["Frontend"])
 def style():
     return FileResponse("website/style.css")
 
 
-@app.get("/script", tags=["Frontend"])
+@app.get("/script.js", tags=["Frontend"])
 def script():
     return FileResponse("website/script.js")
 
 
 @app.get("/heath", tags=["Internal"])
 def health():
-    return "Healthy"
+    return "Healthy!!"
 
 
 @app.post("/execute", tags=["Calc"])
