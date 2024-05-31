@@ -39,5 +39,10 @@ COPY . .
 # Expose the port that the application listens on.
 EXPOSE 80
 
+# Adding the Required Environment Variables
+ENV ENVIRONMENT Development
+ENV HOST 0.0.0.0
+ENV PORT 80
+
 # Run the application.
-ENTRYPOINT python main.py
+ENTRYPOINT python run_server.py
