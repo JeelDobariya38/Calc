@@ -187,7 +187,7 @@ You can install Calc in three ways:
 
 ## Report Bugs
 
-If you encounter any bugs or have any questions related to Calc, feel free to create an issue on our [GitHub repository](https://github.com/JeelDobariya38/Calc/issues).
+If you encounter any bugs or have any questions related to Calc, feel free to create an issue on our [GitHub repository](https://github.com/JeelDobariya38/Calc-Backend/issues).
 
 For feature requests or contributions, you are welcome to create an issue or a pull request.
 
