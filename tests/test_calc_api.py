@@ -18,3 +18,9 @@ def test_execute_route(command, result):
     assert response.status_code == 200
     assert data["command"] == command
     assert data["result"] == result
+
+
+@pytest.mark.parametrize("command", ["3 / ", "2 + "])
+def test_execute_route_with_bad_request(command):
+    response = client.post("/execute", json={"command": command})
+    assert response.status_code == 400
