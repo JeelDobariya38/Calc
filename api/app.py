@@ -12,12 +12,12 @@ app = FastAPI(
     description=metadata.DESCRIPTION,
     version=metadata.VERSION,
     license_info=metadata.LICENSE_INFO,
-    openapi_tags=metadata.METADATA_TAGS
+    openapi_tags=metadata.METADATA_TAGS,
 )
 
 origins = [
     "http://localhost",
-    "http://localhost:8080",
+    "http://localhost:3000",
 ]
 
 
@@ -35,19 +35,19 @@ def root():
     return FileResponse("website/index.html")
 
 
-@app.get("/style", tags=["Frontend"])
+@app.get("/style.css", tags=["Frontend"])
 def style():
     return FileResponse("website/style.css")
 
 
-@app.get("/script", tags=["Frontend"])
+@app.get("/script.js", tags=["Frontend"])
 def script():
     return FileResponse("website/script.js")
 
 
 @app.get("/heath", tags=["Internal"])
 def health():
-    return "Healthy"
+    return "Healthy!!"
 
 
 @app.post("/execute", tags=["Calc"])
@@ -56,11 +56,5 @@ def execute(_command: Command, response: Response):
         res = calc_execute(_command.command)
     except CalcException as e:
         response.status_code = status.HTTP_400_BAD_REQUEST
-        return {
-            "Error": e
-        }
-    return {
-        "command": _command.command,
-        "result": res
-    }
-
+        return {"Error": e}
+    return {"command": _command.command, "result": res}

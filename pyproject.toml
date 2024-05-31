@@ -6,9 +6,10 @@ authors = ["Jeel Dobariya <dobariyaj34@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = ">=3.10.0,<3.12"
+python = ">=3.10.0,<3.13"
 colorama = "^0.4.6"
 fastapi = "^0.111.0"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.lint]
 optional = true
@@ -19,7 +20,6 @@ optional = true
 [tool.poetry.group.lint.dependencies]
 flake8 = "^7.0.0"
 black = "^24.4.2"
-pylint = "^3.2.2"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.2.1"

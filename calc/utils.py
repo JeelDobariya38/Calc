@@ -12,7 +12,7 @@ def print_version():
 
 def print_help_msg(context=""):
     if context == "quit" or context == "exit":
-        print(f'Command "quit" and "exit" are use to exit {metadata.APPNAME}!!')
+        print(f'Command "quit" and "exit" are use to quit {metadata.APPNAME}!')
     elif context == "version":
         print_version()
     elif context == "command":

@@ -25,7 +25,7 @@ def repl_executor():
 
     while True:
         try:
-            code = input(">> ").strip()
+            code = input(">> ")
             if code == "quit" or code == "exit":
                 print()
                 return 0
