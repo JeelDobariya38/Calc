@@ -37,3 +37,4 @@ README.md
 .pytest_cache
 .flake8
 /tests
+/.github
