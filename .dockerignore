@@ -30,11 +30,12 @@
 **/obj
 **/secrets.dev.yaml
 **/values.dev.yaml
+**/.github
+**/tests
+changelog.txt
 LICENSE
 LICENSE.txt
 README.md
 .coverage
 .pytest_cache
 .flake8
-/tests
-/.github
